@@ -60,7 +60,10 @@ public class ChessPiece {
         return switch (piece_type) {
             case KING -> KingMoveRules.validRules();
             case QUEEN -> QueenMoveRules.validRules();
-            default -> new ArrayList<>();
+            case BISHOP -> BishopMoveRules.validRules();
+            case KNIGHT -> KnightMoveRules.validRules();
+            case ROOK -> RookMoveRules.validRules();
+            case PAWN -> PawnMoveRules.validRules();
         };
     }
 }
