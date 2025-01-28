@@ -16,14 +16,12 @@ public class ChessPosition {
         this.col = col;
     }
 
-    //Getter methods return the row and column already accounting for the fact that arrays start at 0
-
     /**
      * @return which row this position is in
      * 1 codes for the bottom row
      */
     public int getRow() {
-        return row - 1;
+        return row;
     }
 
     /**
@@ -31,11 +29,11 @@ public class ChessPosition {
      * 1 codes for the left row
      */
     public int getColumn() {
-        return col - 1;
+        return col;
     }
 
     @Override
     public String toString() {
-        return "Chess Position:\n  Row: " + (row-1) + "\nColumn: " + (col-1);
+        return "Chess Position:\n  Row: " + (row) + "\nColumn: " + (col);
     }
 }

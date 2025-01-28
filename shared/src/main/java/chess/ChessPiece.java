@@ -58,12 +58,12 @@ public class ChessPiece {
      */
     public Collection<ChessMove> pieceMoves(ChessBoard board, ChessPosition myPosition) {
         return switch (piece_type) {
-            case KING -> KingMoveRules.validRules();
-            case QUEEN -> QueenMoveRules.validRules();
-            case BISHOP -> BishopMoveRules.validRules();
-            case KNIGHT -> KnightMoveRules.validRules();
-            case ROOK -> RookMoveRules.validRules();
-            case PAWN -> PawnMoveRules.validRules();
+            case KING -> KingMoveRules.validRules(board, myPosition);
+            case QUEEN -> QueenMoveRules.validRules(board, myPosition);
+            case BISHOP -> BishopMoveRules.validRules(board, myPosition);
+            case KNIGHT -> KnightMoveRules.validRules(board, myPosition);
+            case ROOK -> RookMoveRules.validRules(board, myPosition);
+            case PAWN -> PawnMoveRules.validRules(board, myPosition);
         };
     }
 }
