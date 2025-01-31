@@ -24,5 +24,8 @@ public class BishopMoveRules {
         return validMoves;
     }
 
+    public static boolean isBishopBlocked(){
+        return false;
+    }
 
 }

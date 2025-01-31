@@ -16,8 +16,8 @@ public class MoveRules {
             curr_x += colShift;
             curr_y += rowShift;
 
-            if(MoveRules.isOnBoard(curr_y, curr_x) && !MoveRules.isBlocked(curr_y, curr_x)) {
-                validMoves.add(new ChessMove(original_pos, new ChessPosition(curr_y, curr_x), piece));
+            if(MoveRules.isOnBoard(curr_y, curr_x) && !MoveRules.isBlocked(piece, curr_y, curr_x)) {
+                validMoves.add(new ChessMove(original_pos, new ChessPosition(curr_y, curr_x), null));
                 System.out.println("(" + curr_y + ", " + curr_x + ")");
             }
             else break;
@@ -28,7 +28,10 @@ public class MoveRules {
         return x >= 1 && y >= 1 && x <= 8 && y <= 8;
     }
 
-    public static boolean isBlocked(int y, int x) {
+    public static boolean isBlocked(ChessPiece.PieceType piece, int y, int x) {
+        if(piece == ChessPiece.PieceType.BISHOP)
+            return BishopMoveRules.isBishopBlocked();
+
         return false;
     }
 }

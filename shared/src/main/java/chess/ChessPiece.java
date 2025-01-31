@@ -7,14 +7,12 @@ import chess.PieceMoveRules.*;
 
 /**
  * Represents a single chess piece
- * <p>
- * Note: You can add to this class, but you may not alter
- * signature of the existing methods.
  */
 public class ChessPiece {
 
     private final ChessGame.TeamColor piece_color;
     private final PieceType piece_type;
+
 
     public ChessPiece(ChessGame.TeamColor pieceColor, ChessPiece.PieceType type) {
         piece_color = pieceColor;

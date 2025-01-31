@@ -1,10 +1,9 @@
 package chess;
 
+import java.util.Objects;
+
 /**
- * Represents moving a chess piece on a chessboard
- * <p>
- * Note: You can add to this class, but you may not alter
- * signature of the existing methods.
+ * Represents moving a chess piece on a chessboard.
  */
 public class ChessMove {
 
@@ -41,5 +40,28 @@ public class ChessMove {
      */
     public ChessPiece.PieceType getPromotionPiece() {
          return promo_piece;
+    }
+
+    @Override
+    public String toString() {
+        return "ChessMove{" +
+                "start_pos=" + start_pos +
+                ", end_pos=" + end_pos +
+                ", promo_piece=" + promo_piece +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ChessMove chessMove = (ChessMove) o;
+        return Objects.equals(start_pos, chessMove.start_pos) && Objects.equals(end_pos, chessMove.end_pos) && promo_piece == chessMove.promo_piece;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(start_pos, end_pos, promo_piece);
     }
 }

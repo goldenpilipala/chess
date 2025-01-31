@@ -29,8 +29,7 @@ public class ChessBoard {
      * Gets a chess piece on the chessboard
      *
      * @param position The position to get the piece from
-     * @return Either the piece at the position, or null if no piece is at that
-     * position
+     * @return Either the piece at the position, or null if no piece is at that position
      */
     public ChessPiece getPiece(ChessPosition position) {
         return my_board[position.getRow()][position.getColumn()];
